@@ -6,15 +6,18 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+
+  ingressClassName: public
+
   rules:
-    - host: {{ .Values.ingress.host }}
-      http:
+    - http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Chart.Name }}-service
-                port:
-                  number: {{ .Values.service.port }}
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: {{ .Chart.Name }}-service
+              port:
+                number: {{ .Values.service.port }}
+
 {{- end }}

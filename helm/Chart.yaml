@@ -1,5 +1,5 @@
 apiVersion: v2
-name: my-go-app
+name: my-go-app2
 description: A simple Go API
 version: 0.1.0
 appVersion: "1.0"

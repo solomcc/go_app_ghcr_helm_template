@@ -1,14 +1,14 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/solomcc/my-go-api:latest
+  repository: ghcr.io/solomcc/my-go-api
   tag: latest
   pullPolicy: IfNotPresent
 
 service:
   type: ClusterIP
-  port: 8083
-  targetPort: 8080
+  port: 8082
+  targetPort: 8083
 
 ingress:
   enabled: true

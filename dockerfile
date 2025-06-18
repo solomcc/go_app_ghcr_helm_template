@@ -7,5 +7,5 @@ RUN go build -o server .
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/server .
-EXPOSE 8080
+EXPOSE 8083
 ENTRYPOINT ["./server"]

@@ -2,12 +2,16 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"embed"
 )
+//go:embed static/index.html
+var content embed.FS
+
+
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Hello from Go in MicroK8s!")
+	http.ServeFileFS(w, r, content, "/static/index.html")
 }
 
 func main() {

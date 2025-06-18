@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: {{ .Chart.Name }}-service
 spec:
+  type: NodePort   
   selector:
     app: {{ .Chart.Name }}
   ports:
